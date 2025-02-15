@@ -32,7 +32,7 @@ Register-ArgumentCompleter -CommandName gpg -Native -ScriptBlock {
 	if ($wordToComplete -like "-*" -or $prev -like "gpg*") {
 		$gpgShortOpts = @("-a", "-b", "-c", "-d", "-e", "-i", "-k", "-K", "-n", "-o", "-q", "-r", "-s", "-u", "-v", "-z")
 		$gpgLongOpts = @(& gpg --dump-options | Sort-Object)
-		$gpgShortOpts + $gpgLongOpts | Where-Object {	$_ -like "$wordToComplete*" } | ForEach-Object {	$_ }
+		$gpgShortOpts + $gpgLongOpts | Where-Object { $_ -like "$wordToComplete*" } | ForEach-Object { $_ }
 	}
 }
 Register-ArgumentCompleter -CommandName gpgv -Native -ScriptBlock {
